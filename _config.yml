@@ -20,6 +20,9 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+gems:
+- jekyll-email-protect
+
 # Third-party services
 # just leave someone empty to disable it
 # google_analytics:
