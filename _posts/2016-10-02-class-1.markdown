@@ -4,45 +4,62 @@ title:  "Cvičenie č. 1 - Úvod, organizácia, logické ulohy"
 date: 2016-10-02 10:06:26 +0800
 categories: NPRG030
 ---
-<a style="text-decoration: underline;" href="mailto:{{ site.email | encode_email }}" title="Contact me">Contact me</a>
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# Organizácia
+Všetky informácie o cvičeniach nájdete na stránke <a href="/about">O cvičeniach</a>.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+# Úlohy
+### Mince
+Dostali ste **deväť** na prvý pohľad rovnakých mincí, jedna z nich je však **falošná** - je ľahšia než všetky ostatné (ostatné vážia rovnako). Máte k dispozícii rovnoramenné váhy. **Čo najmenším počtom vážení zistite, ktorá je falošná.**
 
-Jekyll also offers powerful support for code snippets:
+Dostali jste devět na pohled stejných mincí, jedna je falešná - lehčí. K dispozici máte rovnoramenné váhy. Jak na dvě vážení zjistíte, která je falešná?
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+### Rieka
+Na jednom brehu stojí **bača, vlk, koza, kapusta (zelí) a lodička**. Vlk by rád zožral kozu, koza by rada zožrala kapustu, ale kým je s nimi na jednom brehu bača, tak si to nedovolia.
+Do lodičky môže bača vziať len jedno zviera alebo kapustu. Dve zvieratá alebo zviera a kapusta sa na lodičku naraz
+nezmestia. Koza ani vlk nevie pádlovať. **Ako dostane bača vlka, kozu aj kapustu na druhú stranu tak, aby na jednom brehu nikdy nebola koza s vlkom alebo s kapustou?**
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+### Rodina
+Štvorčlenná rodina potrebuje prejsť tunelom, pričom:
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+* tunelom sa nedá ísť potme
+* otec prejde tunel za 1 minútu
+* mama prejde tunel za 2 minúty
+* syn prejde tunel za 4 minúty
+* dcéra prejde tunel za 5 minút
+* majú baterku, ktorá poskytuje svetlo pre dve osoby a vydrží svietiť 12 minút
 
-<!--description-->
-{{ site.email }}
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+**Ako sa dostane rodina cez tunel?**
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+### Lámanie čokolády
+Majme čokoládu, ktorá sa skladá z **m x n** štvorčekov. Chceme ju nalámať na jednotlivé
+štvorčeky, ale môžeme vždy lámať len jeden kus čokolády naraz, tzn. nesmieme kusy čokolády prekladať.
 
-Jekyll also offers powerful support for code snippets:
+* **Aký je najmenší počet lámaní, aby sme čokoládu rozdelili na jednotlivé štvorčeky?**
+* **Závisí počet lámaní na konkrétnej stratégii akou budeme lámať?**
+* **Aký je počet lámaní, ak dovolíme jednotlivé kusy čokolády pri lámaní prekladať?**
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+### Ťava (velbloud)
+V púšti máme hromadu **3000** banánov a ťavu s nosnosťou **1000** banánov. Ťava má navyše spotrebu
+**1 banán na kilometer** a v púšti si môžeme vytvárať ďaľšie dočasné hromady. Ťava taktiež
+zje svoj banán vždy na začiatku každého načatého kilometru svojej cesty.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+**Koľko banánov dokážeme pomocou tejto ťavy preniesť do 1000 kilometrov
+vzdialenej oázy?**
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+### Prelievanie vody
+Máte **dva džbány**, prvý s objemom **5 litrov (v1)**, druhý s objemom **3 litre (v2)** a neobmedzený zdroj vody.
+Máte dovolené nasledujúce operácie: naplniť jeden z džbánov do plna, vyliať všetku vodu z jedného džbánu a preliať vodu z jedného džbánu do druhého (dolejete ho vždy do plna).
+
+* **Dokažete odmerať 4 litre (v3)?**
+* **Navrhnite algoritmus, ktorý úlohu vyrieši pre ľubovolné hodnoty v1, v2 a v3.**
+* **Nájde váš algoritmus vždy postup s najmenším počtom operácii?**
+
+# Domáca úloha: Zoradenie čísel
+Vymyslite algoritmus (všeobecný postup) pre zotriedenie **n** ľubovolných navzájom rôznych celých čísel.
+**Akýkoľvek algoritmus s ktorým prídete je OK, nemusíte ho loviť na internete.** Váš algoritmus spíšte podobne,
+ako ste popisovali algoritmy na prednáške (minimálne tak aby som ho pochopil). Riešenie mi pošlite **<a href="mailto:{{ site.email }}">e-mailom</a>** alebo odovzdajte na začiatku ďaľšieho cvičenia.
+
+**Termín: do ďaľšieho cvičenia 12. 10. 2016**
+
+# Do ďalšej hodiny
+* Ak sa rozhodnete navštevovať moje cvičenia skontrolujte si či ste ku mne zapísaný v SIS-e, inak vám nebudem môcť udeliť zápočet.
