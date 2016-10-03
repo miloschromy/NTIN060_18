@@ -8,6 +8,7 @@ categories: NPRG030
 Všetky informácie o cvičeniach nájdete na stránke <a href="/about">O cvičeniach</a>.
 
 # Úlohy
+
 ### Mince
 Dostali ste **deväť** na prvý pohľad rovnakých mincí, jedna z nich je však **falošná** - je ľahšia než všetky ostatné (ostatné vážia rovnako). Máte k dispozícii rovnoramenné váhy. **Čo najmenším počtom vážení zistite, ktorá je falošná.**
 
