@@ -19,16 +19,18 @@ V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať
 to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že vám ho pošlem späť s možnosťou opravy.
 
 ### Zápočtová písomka
-Bude sa pravdepodobne konať **na poslednom cvičení** a predmetom písomky bude napísanie nejakého programu, ktorý bude riešiť niečo z toho, čo sa prebralo na cvičeniach. Na splnenie písomky budú k dispozícii **3 termíny**.
+Bude sa pravdepodobne konať **na poslednom cvičení** a predmetom písomky bude napísanie nejakého programu, ktorý bude riešiť niečo z toho, čo sa prebralo na cvičeniach (pravdepodobne niečo s pointermi). Na splnenie písomky budú k dispozícii **3 termíny**.
 
 ### Zápočtový program
 
 Dôležité termíny:
+
 1. Záväzná špecifikácia do **30. 11. 2016**.
 2. Odovzdanie finálnej verzie do konca skúškového v zimnom semestri tj. **21. 2. 2017**.
 
 #### Špecifikácia
 Špecifikáciu píšte tak, ako keby ste písali zadanie ulohy do **CodEx**-u. Jej hlavným cieľom je priblížiť riešenú problematiku. Malo by z nej byť jasné čo presne bude daný program riešiť a každý programátor by mal vedieť podľa tejto špecifikácie výsledný program vytvoriť. Špecifikácia by preto mala obsahovať minimálne:
+
 1. Vymedzenie problematiky, ktorou sa bude program zaoberať.
 2. Čo presne bude program vediet a aké budú jeho limity.
 3. Popis vstupu a výstupu programu.
