@@ -7,7 +7,7 @@ Práve sa nachádzate na stránkach k cvičeniam z [Programování 1](https://is
 
 ### Podmienky pre zápočet
 1. Účašť na cvičeniach aspoň **70%**.
-2. Získanie aspon **60%** zo všetkých povinných domácich úloh.
+2. Získanie aspoň **60%** zo všetkých povinných domácich úloh.
 3. Úspešné zvládnutie zápočtovej písomky.
 4. **Včasné**  odovzdanie **funknčného** zápočtové programu aj s povinnými prílohami.
 
@@ -16,7 +16,7 @@ Práve sa nachádzate na stránkach k cvičeniam z [Programování 1](https://is
 
 Úlohy odovzdávané do **CodEx**-u budú vyhodnocované automaticky a výsledok sa dozviete prakticky okamžite.
 V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať ďaľšie riešenie. U úloh odovzdávaných e-mailom
-to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že vám ho pošlem späť s možnosťou opravy.
+to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že Vám ho pošlem späť s možnosťou opravy.
 
 ### Zápočtová písomka
 Bude sa pravdepodobne konať **na poslednom cvičení** a predmetom písomky bude napísanie nejakého programu, ktorý bude riešiť niečo z toho, čo sa prebralo na cvičeniach (pravdepodobne niečo s pointermi). Na splnenie písomky budú k dispozícii **3 termíny**.
@@ -32,7 +32,7 @@ Dôležité termíny:
 Špecifikáciu píšte tak, ako keby ste písali zadanie ulohy do **CodEx**-u. Jej hlavným cieľom je priblížiť riešenú problematiku. Malo by z nej byť jasné čo presne bude daný program riešiť a každý programátor by mal vedieť podľa tejto špecifikácie výsledný program vytvoriť. Špecifikácia by preto mala obsahovať minimálne:
 
 1. Vymedzenie problematiky, ktorou sa bude program zaoberať.
-2. Čo presne bude program vediet a aké budú jeho limity.
+2. Čo presne bude program vedieť a aké budú jeho limity.
 3. Popis vstupu a výstupu programu.
 
 Špecifikáciu odovzdávajte vo formáte **PDF**. Očakávaný rozsah je cca. 1 A4. **Nenechávajte si špecifikáciu na poslednú chvíľu, pretože je možné, že ju nepríjmem na prvý krát a budem chcieť, aby ste niečo doplnili/upravili.**
@@ -41,9 +41,9 @@ Dôležité termíny:
 
 #### Odovzdanie
 Odovzdanie zápočtového programu bude prebiehať nasledovne:
-1. e-mailom my pošlete zdrojový kód, dokumentáciu a testovacie dáta (ak sú nejaké potrebné)
-2. dohodneme sa na termíne odovzdania
-3. stretneme sa a výsledný program mi predvediete osobne
+1. E-mailom my pošlete zdrojový kód, dokumentáciu a testovacie dáta (ak sú nejaké potrebné).
+2. Dohodneme sa na termíne odovzdania.
+3. Stretneme sa a výsledný program mi predvediete osobne.
 
 Odovzdaný zdrojový kód by mal byť rozumne naformátovaný a okomentovaný.
 
