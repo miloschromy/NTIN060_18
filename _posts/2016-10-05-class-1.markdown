@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cvičenie č. 1 - Úvod, organizácia, logické ulohy"
-date: 2016-10-02 10:06:26 +0800
+date: 2016-10-05 0:01:00 +0100
 categories: NPRG030
 ---
 # Organizácia
