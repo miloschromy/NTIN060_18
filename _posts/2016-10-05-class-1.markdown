@@ -31,7 +31,8 @@ nezmestia. Koza ani vlk nevie pádlovať. **Ako dostane bača vlka, kozu aj kapu
 
 ### Lámanie čokolády
 Majme čokoládu, ktorá sa skladá z **m x n** štvorčekov. Chceme ju nalámať na jednotlivé
-štvorčeky, ale môžeme vždy lámať len jeden kus čokolády naraz, tzn. nesmieme kusy čokolády prekladať.
+štvorčeky, ale môžeme vždy lámať len jeden kus čokolády naraz,
+tzn. nesmieme kusy čokolády prekladať.
 
 * **Aký je najmenší počet lámaní, aby sme čokoládu rozdelili na jednotlivé štvorčeky?**
 * **Závisí počet lámaní na konkrétnej stratégii akou budeme lámať?**
