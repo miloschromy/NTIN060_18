@@ -12,8 +12,6 @@ Všetky informácie o cvičeniach nájdete na stránke <a href="/about">O cviče
 ### Mince
 Dostali ste **deväť** na prvý pohľad rovnakých mincí, jedna z nich je však **falošná** - je ľahšia než všetky ostatné (ostatné vážia rovnako). Máte k dispozícii rovnoramenné váhy. **Čo najmenším počtom vážení zistite, ktorá je falošná.**
 
-Dostali jste devět na pohled stejných mincí, jedna je falešná - lehčí. K dispozici máte rovnoramenné váhy. Jak na dvě vážení zjistíte, která je falešná?
-
 ### Rieka
 Na jednom brehu stojí **bača, vlk, koza, kapusta (zelí) a lodička**. Vlk by rád zožral kozu, koza by rada zožrala kapustu, ale kým je s nimi na jednom brehu bača, tak si to nedovolia.
 Do lodičky môže bača vziať len jedno zviera alebo kapustu. Dve zvieratá alebo zviera a kapusta sa na lodičku naraz
