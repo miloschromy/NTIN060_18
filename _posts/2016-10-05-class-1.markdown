@@ -4,7 +4,7 @@ title:  "Cvičenie č. 1 - Úvod, organizácia, logické ulohy"
 date: 2016-10-05 0:01:00 +0100
 categories: NPRG030
 ---
-# Organizácia
+# Organizácia a
 Všetky informácie o cvičeniach nájdete na stránke <a href="/about">O cvičeniach</a>.
 
 # Úlohy
