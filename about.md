@@ -15,8 +15,7 @@ Práve sa nachádzate na stránkach k cvičeniam z [Programování 1](https://is
 Časť domácich úloh mi budete odovzdávať **e-mailom** (príp. osobne) a zvyšok do systému [CodEx](https://codex.ms.mff.cuni.cz/codex-prg/). Termín odovzdania bude vždy do večera pred ďalším cvičením, konkrétne do **utorka 23:59**. Aby som Vám ušetril prácu, tak riešenia na papier budem prijímať aj osobne na ďaľsom cvičení. Ak odovzdáte riešenie neskôr, avšak max. týždeň po termíne dostanete polovicu bodov za danú úlohu.
 
 Úlohy odovzdávané do **CodEx**-u budú vyhodnocované automaticky a výsledok sa dozviete prakticky okamžite.
-V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať ďaľšie riešenie. U úloh odovzdávaných e-mailom
-to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že Vám ho pošlem späť s možnosťou opravy.
+V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať ďaľšie riešenie. U úloh odovzdávaných e-mailom to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že Vám ho pošlem späť s možnosťou opravy. **Predmet e-mailu prosím píšte vždy vo formáte "NPRG030, Cvč. X, názov úlohy ", uľahčíte my tým prácu.**
 
 ### Zápočtová písomka
 Bude sa pravdepodobne konať **na poslednom cvičení** a predmetom písomky bude napísanie nejakého programu, ktorý bude riešiť niečo z toho, čo sa prebralo na cvičeniach (pravdepodobne niečo s pointermi). Na splnenie písomky budú k dispozícii **3 termíny**.
