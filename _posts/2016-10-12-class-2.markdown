@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "Cvičenie č. 2 - Prehľadávanie stavového priestoru, asymptotická zložitosť"
+date: 2016-10-12 1:01:00 +0100
+categories: NPRG030
+---
+# Úlohy
+
+### Prelievanie vody
+Máte **dva džbány**, prvý s objemom **5 litrov (v1)**, druhý s objemom **3 litre (v2)** a neobmedzený zdroj vody.
+Máte dovolené nasledujúce operácie: naplniť jeden z džbánov do plna, vyliať všetku vodu z jedného džbánu a preliať vodu z jedného džbánu do druhého (dolejete ho vždy do plna).
+
+* **Dokažete odmerať 4 litre (v3)?**
+* **Navrhnite algoritmus, ktorý úlohu vyrieši pre ľubovolné hodnoty v1, v2 a v3.**
+* **Nájde váš algoritmus vždy postup s najmenším počtom operácii?**
+
+<a href="https://docs.google.com/presentation/d/1eBaRqTgjBJgzpGmnh8tw7xilUhY8v6Oa7PpRfsvV95w/edit?usp=sharing" target="_blank">Prehľadávanie stavového priestoru</a>
+
+### Asymptotická zložitosť - definíca
+
+Rozhodnite a **pomocou definície dokážte** či platia alebo neplatia nasledujúce vzťahy:
+1. \\( x \in O(x^2) \\)
+1. \\( x^2 + 3 \in O(x^2) \\)
+1. \\( 2x^2 \in O(x^2) \\)
+1. \\( x^2 \in O(x) \\)
+1. \\( 3x^2 + 4x - 2 \in O(x^2) \\)
+
+### Asymptotická zložitosť - použitie
+Spočítajte koľko hviezdičiek vypíšu nasledujúce programy a z toho potom
+určite ich asymptotickú zložitosť.
+
+1.)
+{% highlight pascal %}
+for i:= 1 to N do
+	write('*');
+{% endhighlight %}
+2.)
+{% highlight pascal %}
+for i := 1 to N do
+	for j := 1 to N do
+		write('*');
+{% endhighlight %}
+3.)
+{% highlight pascal %}
+for i := 1 to N do
+	for j := 1 to i do
+		write('*');
+{% endhighlight %}
+4.)
+{% highlight pascal %}
+for i := 1 to N do begin
+	for j := 1 to i * i do
+		write('*');
+{% endhighlight %}
+5.)
+{% highlight pascal %}
+for i := 1 to N do begin
+	for j := 1 to N do
+		for k := 1 to j do
+			write('*');
+{% endhighlight %}
+
+6.)
+{% highlight pascal %}
+for i := 1 to N do begin
+	for j := 1 to N * N do
+		write('*');
+
+	for k := 1 to N do
+		write('*');
+{% endhighlight %}
+7.)
+{% highlight pascal %}
+for i := 1 to N do begin
+	for j := 1 to 100 do
+		write('*');
+{% endhighlight %}
+8.)
+{% highlight pascal %}
+i := 1;
+while i <= N do begin
+	i := i * 2;
+	write('*');
+{% endhighlight %}
+9.)
+{% highlight pascal %}
+i := 1;
+while i <= N do begin
+	for j := 1 to N do
+		write('*');
+	i := i * 2;
+{% endhighlight %}
+Pomôcky:
+* \\( 1 + 2 + 3 + ... + n = \sum_{i=1}^{n} i = \frac{1}{2} (n+1)n \\)
+* \\( 1 + 4 + 9 + ... + n^2 = \sum_{i=1}^{n} i^2 = \frac{1}{6} n(n+1)(2n+1) \\)
+
+### Vyhľadávanie v telefónnom zozname
+Na vstup dostanete telefónny zoznam s unikátnymi telefónnymi číslami \\(t_1, t_2, ..., t_N\\), znač.: \\(zoznam = [t_1, t_2, ..., t_N]\\). Každé telefonné čislo je reprezentované prirodzeným číslom.
+Ďalej na vstup dostanete telefónne číslo **T** a vašou úlohou je zistiť či sa **T** nachádza v telefónnom zozname. Navrhnite algoritmus riešiaci tento problém pre:
+* nezotriedený telefónny zoznam
+* vzostupne zotriedený telefónny zoznam, tzn. platí \\(t_1 < t_2 < t_3 < ... < t_N\\)
+
+Vaše riešenie spíšte do podobného pseudokódu, aký ste používali na prednáške a zistite aká je časová zložitosť vášho algoritmu vhľadom k počtu porovnaní, ktoré potrebujete vykonať.
+
+# Domáca úloha: Chýbajúce číslo
+Predstavte si zoznam **N** celých čísel \\(S = [1, 2, ..., N]\\).
+Z tohto zoznamu teraz náhodne odstránim jedno číslo, čím znížim počet čísel v zozname na
+**N-1**. Nakoniec zoznam ešte náhodne zamiešam.
+Príklad:
+1. \\(S = [1, 2, 3, 4, 5]\\)
+2. \\(S = [1, 3, 4, 5]\\) - odstránil som dvojku
+3. \\(S = [4, 1, 5, 3]\\) - zoznam som náhodne premiešal
+
+Vašou úlohou je navrhnúť algoritmus, ktorý v čo najkratšom čase dokáže identifikovať chýbajúce číslo. Hodnotiť sa bude okrem správnosti algoritmu hlavne pochopiteľnosť jeho zápisu. Zároveň si rozmyslite aká je časová zložitosť vášho algoritmu v najhoršom prípade (ak budete používať pomocné datové štruktúry, tak pridajte aj pamäťovú zložitosť). Tentokrát nás nezaujíma
+konkrétny počet krokov, ale úplne postačí asymptotická zložitosť,
+tj. niečo ako: \\(O(N), O(N^2), O(N * log(N)) ...\\)
+
+Všetko spíšte a odovzdajte **<a href="mailto:{{ site.email }}">e-mailom</a>** alebo osobne na začiatku ďaľšieho cvičenia.
+
+**Termín: do ďaľšieho cvičenia 19. 10. 2016**
+
+# Do ďalšej hodiny
+* Ak sa rozhodnete navštevovať moje cvičenia, skontrolujte si či ste ku mne zapísaný v **SIS**-e, inak vám nebudem môcť udeliť zápočet.
+* Od ďaľšieho cvičenia budeme používať počítače v labe, preto je nutné aby ste si na nich zriadili účty.
+* Zaregistrujte sa do [CodEx-u](https://codex.ms.mff.cuni.cz/codex-prg/) a zapíšte sa v ňom do mojej skupiny.
