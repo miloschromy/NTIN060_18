@@ -19,6 +19,7 @@ Máte dovolené nasledujúce operácie: naplniť jeden z džbánov do plna, vyli
 ### Asymptotická zložitosť - definíca
 
 Rozhodnite a **pomocou definície dokážte** či platia alebo neplatia nasledujúce vzťahy:
+
 1. \\( x \in O(x^2) \\)
 1. \\( x^2 + 3 \in O(x^2) \\)
 1. \\( 2x^2 \in O(x^2) \\)
@@ -91,6 +92,7 @@ while i <= N do begin
 	i := i * 2;
 {% endhighlight %}
 Pomôcky:
+
 * \\( 1 + 2 + 3 + ... + n = \sum_{i=1}^{n} i = \frac{1}{2} (n+1)n \\)
 * \\( 1 + 4 + 9 + ... + n^2 = \sum_{i=1}^{n} i^2 = \frac{1}{6} n(n+1)(2n+1) \\)
 
