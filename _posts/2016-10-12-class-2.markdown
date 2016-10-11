@@ -99,6 +99,7 @@ Pomôcky:
 ### Vyhľadávanie v telefónnom zozname
 Na vstup dostanete telefónny zoznam s unikátnymi telefónnymi číslami \\(t_1, t_2, ..., t_N\\), znač.: \\(zoznam = [t_1, t_2, ..., t_N]\\). Každé telefonné čislo je reprezentované prirodzeným číslom.
 Ďalej na vstup dostanete telefónne číslo **T** a vašou úlohou je zistiť či sa **T** nachádza v telefónnom zozname. Navrhnite algoritmus riešiaci tento problém pre:
+
 * nezotriedený telefónny zoznam
 * vzostupne zotriedený telefónny zoznam, tzn. platí \\(t_1 < t_2 < t_3 < ... < t_N\\)
 
@@ -109,6 +110,7 @@ Predstavte si zoznam **N** celých čísel \\(S = [1, 2, ..., N]\\).
 Z tohto zoznamu teraz náhodne odstránim jedno číslo, čím znížim počet čísel v zozname na
 **N-1**. Nakoniec zoznam ešte náhodne zamiešam.
 Príklad:
+
 1. \\(S = [1, 2, 3, 4, 5]\\)
 2. \\(S = [1, 3, 4, 5]\\) - odstránil som dvojku
 3. \\(S = [4, 1, 5, 3]\\) - zoznam som náhodne premiešal
