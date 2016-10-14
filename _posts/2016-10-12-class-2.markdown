@@ -105,6 +105,8 @@ Na vstup dostanete telefónny zoznam s unikátnymi telefónnymi číslami \\(t_1
 
 Vaše riešenie spíšte do podobného pseudokódu, aký ste používali na prednáške a zistite aká je časová zložitosť vášho algoritmu vhľadom k počtu porovnaní, ktoré potrebujete vykonať.
 
+**Bonusová úloha: Riešenie pre zotriedený zoznam v čase \\(O(log(N))\\) do ďaľšieho cvičenia.**
+
 # Domáca úloha: Chýbajúce číslo
 Predstavte si zoznam **N** celých čísel \\(S = [1, 2, ..., N]\\).
 Z tohto zoznamu teraz náhodne odstránim jedno číslo, čím znížim počet čísel v zozname na
@@ -120,6 +122,18 @@ konkrétny počet krokov, ale úplne postačí asymptotická zložitosť,
 tj. niečo ako: \\(O(N), O(N^2), O(N * log(N)) ...\\)
 
 Všetko spíšte a odovzdajte **<a href="mailto:{{ site.email }}">e-mailom</a>** alebo osobne na začiatku ďaľšieho cvičenia.
+
+Algoritmus nižsie môžete použiť ako inšpiráciu pre to, ako môže taký pseudokód vyzerať.
+{% highlight python %}
+Algoritmus pre nájdenie maximálneho prvku v poli.
+Input: Pole A obsahujúce n celých čísel
+Output: Maximálny prvok v poli A
+currentMax := A[0]
+for i := 1 to n-1 do
+  if currentMax < A[i] then
+    currentMax = A[i]
+return currentMax
+{% endhighlight %}
 
 **Termín: do ďaľšieho cvičenia 19. 10. 2016**
 
