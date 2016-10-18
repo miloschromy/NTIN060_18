@@ -67,6 +67,9 @@ return A
 
 ## Pseudokód
 
+### Logické operátory
+![]({{site.baseurl}}/assets/img/binary-truth.svg)
+
 ### Swap
 Navrhnite jednoduchý algoritmus prehodenia hodnôt dvoch celočíslených premenných **A** a **B** bez akejkoľvek pomocnej premennej.
 
