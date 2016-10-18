@@ -17,6 +17,13 @@ Práve sa nachádzate na stránkach k cvičeniam z [Programování 1](https://is
 Úlohy odovzdávané do **CodEx**-u budú vyhodnocované automaticky a výsledok sa dozviete prakticky okamžite.
 V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať ďaľšie riešenie. U úloh odovzdávaných e-mailom to tak byť nemusí, ak však odovzdáte riešenie dostatočne zavčasu a nebude úplne správne, je možné, že Vám ho pošlem späť s možnosťou opravy. **Predmet e-mailu prosím píšte vždy vo formáte "NPRG030, Cvč. X, názov úlohy ", uľahčíte mi tým prácu.**
 
+<span class="red">
+**Pravidlá pre opisovanie:**</span>
+* <span class="red">**po prvom pokuse dostanete záporný počet bodov**</span>
+* <span class="red">**po druhom pokuse nedostanete zápočet**</span>
+* <span class="red">**tieto pravidlá platia pre všetkých zainteresovaných, nebude sa riešiť kto od koho opisoval**</span>
+
+
 ### Zápočtová písomka
 Bude sa pravdepodobne konať **na poslednom cvičení** a predmetom písomky bude napísanie nejakého programu, ktorý bude riešiť niečo z toho, čo sa prebralo na cvičeniach (pravdepodobne niečo s pointermi). Na splnenie písomky budú k dispozícii **3 termíny**.
 
