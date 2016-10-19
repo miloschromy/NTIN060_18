@@ -19,6 +19,7 @@ return A # zostupne zotriedené pole A
 [Vizualizácia fungovania](http://www.programming-algorithms.net/article/39344/Bubble-sort)
 
 **Na zamyslenie:**
+
 * **Aká je presná časová zložitosť tejto implementácie?**
 * **Aká je asymptotická zložitosť v najlepšom a najhoršom prípade?**
 
@@ -39,6 +40,7 @@ return A # zostupne zotriedené pole A
 [Vizualizácia fungovania](http://www.programming-algorithms.net/article/39459/Insertion-sort)
 
 **Na zamyslenie**
+
 * **Aká je časová zložitošť tohto algoritmu v najhoršom prípade ? Na akom vstupe nastáva?**
 * **Aká je časová zložitosť v najlepšom prípade? Na akom vstupne nastáva?**
 
@@ -61,6 +63,7 @@ return A
 {% endhighlight %}
 
 **Na zamyslenie:**
+
 * **Aká je asymptotická časová zložitosť tohto algoritmu?**
 
 # Úlohy
@@ -101,6 +104,7 @@ End.
 ### Kvadratická rovnica
 Napíšte program, ktorý si zo štandardného vstupu postupne načíta parametre **\\(a,b,c\\)** kvadratickej rovnice v tvare **\\( ax^2 + bx + c = 0\\)** a vráti všetky jej koreňe.
 Ošetrite všetky možnosti, tj. rovnica má:
+
 * **2 reálne korene**
 * **1 réalny koreň**
 * **2 komplexné korene**
