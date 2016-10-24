@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "Cvičenie č. 4 - Jednoduché úlohy v Pascale"
+date: 2016-10-24 1:01:00 +0100
+categories: NPRG030
+---
+
+# Úlohy
+
+## Podmienky, reálne čísla
+### Kvadratická rovnica
+Napíšte program, ktorý si zo štandardného vstupu postupne načíta parametre **\\(a,b,c\\)** kvadratickej rovnice v tvare **\\( ax^2 + bx + c = 0\\)** a vráti všetky jej koreňe.
+Ošetrite všetky možnosti, tj. rovnica má:
+
+* **2 reálne korene**
+* **1 réalny koreň**
+* **2 komplexné korene**
+
+Ak si nevzpomínate na riešenie kvadratickej rovnice, tak si pomôžte [wikipediou](https://cs.wikipedia.org/wiki/Kvadratick%C3%A1_rovnice).
+
+**Pomôcka:** Pre odmocninu použite funkciu **sqrt()**
+
+## Cykly a polia
+### Kladné čísla
+Napíšte program, ktorý na vstup dostane ľubovoľne dlhú postupnosť celých čísel. Túto postupnosť úplne rovnako vypíše, ale len do prvého záporného čísla na ktoré narazí (to už nevypíše).
+
+**Príklad**
+
+Vstup:
+{% highlight bash %}
+1 2 42 5 2 1 -1 3 41 421 1
+{% endhighlight %}
+Výstup:
+{% highlight bash %}
+1 2 42 5 2 1
+{% endhighlight %}
+
+### Delitelia v intervale
+Napíšte program, ktorý dostane na vstup na prvom riadku 3 celé čísla: **dolný limit**, **horný limit** a **deliteľ**.
+Predpokladajte, že vždy platí **dolný limit** < **horný limit**. Program následne vypíše na jeden riadok všetký celé čísla z intervalu
+**[dolný limit, horný limit]**, ktoré sú deliteľné **deliteľom**.
+
+**Príklad**
+
+Vstup:
+{% highlight bash %}
+1 100 5
+{% endhighlight %}
+Výstup:
+{% highlight bash %}
+5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+{% endhighlight %}
+
+### Otočenie vstupu
+Napíšte program, ktorý dostane na vstup (všetko na jednom riadku) celé číslo **n** a po ňom ďaľších **n** celých čísel.
+Program následne vypíše túto postupnosť **n** čísel v opačnom poradí.
+
+**Príklad**
+
+Vstup:
+{% highlight bash %}
+5 1 2 3 4 5
+{% endhighlight %}
+Výstup:
+{% highlight bash %}
+5 4 3 2 1
+{% endhighlight %}
+
+## Deliteľnosť
+
+### Test prvočíselnosti
+
+Napíšte algoritmus, ktorý dostane na vstup jedno číslo, a vráti **yes** ak sa jedná o prvočíslo, a **no** inak.
+
+**Príklad 1.**
+
+Vstup:
+{% highlight bash %}
+16
+{% endhighlight %}
+Výstup:
+{% highlight bash %}
+no
+{% endhighlight %}
+
+**Príklad 2.**
+
+Vstup:
+{% highlight bash %}
+13
+{% endhighlight %}
+Výstup:
+{% highlight bash %}
+yes
+{% endhighlight %}
+
+# Domáce úlohy
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinné domáce úlohy:
+**Maximum v posloupnosti (výskyty)** a **PPPPP 2.6 Všechna prvočísla**.
+
+**Termín odovzdania: 1. 11. 2016 (23:59)**
