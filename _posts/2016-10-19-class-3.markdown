@@ -102,6 +102,7 @@ End.
 {% endhighlight %}
 
 # Domáce úlohy
+
 Vašu domácu úlohu tentokrát nájdete v **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e.
 Ide o úlohy **PPPPP 0.2 Hello World 2** a **Suma**.
 
