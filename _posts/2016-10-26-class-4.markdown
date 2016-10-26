@@ -18,7 +18,7 @@ Ošetrite všetky možnosti, tj. rovnica má:
 * **1 réalny koreň**
 * **2 komplexné korene**
 
-Ak si nevzpomínate na riešenie kvadratickej rovnice, tak si pomôžte [wikipediou](https://cs.wikipedia.org/wiki/Kvadratick%C3%A1_rovnice).
+Ak si nevspomínate na riešenie kvadratickej rovnice, tak si pomôžte [wikipediou](https://cs.wikipedia.org/wiki/Kvadratick%C3%A1_rovnice).
 
 **Pomôcka:** Pre odmocninu použite funkciu **sqrt()**
 
