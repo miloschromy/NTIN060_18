@@ -8,7 +8,9 @@ categories: NPRG030
 # Úlohy
 
 ## Podmienky, reálne čísla
+
 ### Kvadratická rovnica
+
 Napíšte program, ktorý si zo štandardného vstupu postupne načíta parametre **\\(a,b,c\\)** kvadratickej rovnice v tvare **\\( ax^2 + bx + c = 0\\)** a vráti všetky jej koreňe.
 Ošetrite všetky možnosti, tj. rovnica má:
 
@@ -21,7 +23,9 @@ Ak si nevzpomínate na riešenie kvadratickej rovnice, tak si pomôžte [wikiped
 **Pomôcka:** Pre odmocninu použite funkciu **sqrt()**
 
 ## Cykly a polia
+
 ### Kladné čísla
+
 Napíšte program, ktorý na vstup dostane ľubovoľne dlhú postupnosť celých čísel. Túto postupnosť úplne rovnako vypíše, ale len do prvého záporného čísla na ktoré narazí (to už nevypíše).
 
 **Príklad**
@@ -36,6 +40,7 @@ Výstup:
 {% endhighlight %}
 
 ### Delitelia v intervale
+
 Napíšte program, ktorý dostane na vstup na prvom riadku 3 celé čísla: **dolný limit**, **horný limit** a **deliteľ**.
 Predpokladajte, že vždy platí **dolný limit** < **horný limit**. Program následne vypíše na jeden riadok všetký celé čísla z intervalu
 **[dolný limit, horný limit]**, ktoré sú deliteľné **deliteľom**.
@@ -52,6 +57,7 @@ Výstup:
 {% endhighlight %}
 
 ### Otočenie vstupu
+
 Napíšte program, ktorý dostane na vstup (všetko na jednom riadku) celé číslo **n** a po ňom ďaľších **n** celých čísel.
 Program následne vypíše túto postupnosť **n** čísel v opačnom poradí.
 
