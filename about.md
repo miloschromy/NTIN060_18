@@ -19,6 +19,7 @@ V prípade ak vaše riešenie nedostane plný počet bodov, tak môžete poslať
 
 <span class="red">
 **Pravidlá pre opisovanie:**</span>
+
 * <span class="red">**po prvom pokuse dostanete záporný počet bodov**</span>
 * <span class="red">**po druhom pokuse nedostanete zápočet**</span>
 * <span class="red">**tieto pravidlá platia pre všetkých zainteresovaných, nebude sa riešiť kto od koho opisoval**</span>
