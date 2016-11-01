@@ -1,0 +1,182 @@
+---
+layout: post
+title:  "Cvičenie č. 5 - Euklidov algoritmus, procedúry vs funkcie"
+date: 2016-11-02 1:01:00 +0100
+categories: NPRG030
+---
+
+# Úlohy
+
+## Test na syntax pascalu
+
+Rozhodnite čo robia nasledujúce programy:
+
+1.
+{% highlight pascal %}
+program test1;
+
+var a : integer;
+
+begin
+  a := 4;
+  if (a > 2) then
+    writeln('foo 1')
+  else
+    a := a + 1;
+    writeln('foo 2');
+end.
+
+{% endhighlight %}
+
+2.
+{% highlight pascal %}
+program test2;
+
+var x,i : integer;
+
+begin
+  x:=1;
+  for i:=1 to 20 do;
+    x:=x+1;
+  writeln(x);
+end.
+{% endhighlight %}
+
+3.
+{% highlight pascal %}
+program test3;
+
+var x,y : integer;
+
+begin
+  x:=1;
+  y:=2;
+  if (x > 0 and 0 < y) then
+    write('foo 1')
+  else
+    write('foo 2');
+end.
+{% endhighlight %}
+
+### Priorita operátorov v Pascale
+
+Od najvyšej priority po najnižšiu:
+
+1. **@, not**
+2. **\*, /, div, mod, and**
+3. **+, -, or, xor**
+4. **=, <>, <, >, <=, >=**
+
+## Euklidov algoritmus
+
+Určite najväčšieho spoločného deliteľa (**NSD**) dvoch zadaných prirodzených čísel **a** a **b**.
+
+**Poznámka**: Použite jednoduchú verziu Euklidovho algoritmu:
+{% highlight python %}
+Vstup: prirodzené čísla a, b
+while a != b:
+   if a < b:
+	 swap(a, b) # prehoď hodnoty
+   a = a - b
+return a
+{% endhighlight %}
+
+**Naviac:**
+* **Dokážte správnosť tohto algoritmu.**
+* **Aká je pamäťová a časová zložitosť tohto algoritmu?**
+
+## Procedúry vs funkcie
+
+* **procedúra** predstavuje nejaký zoznam príkazov, ktoré sa majú vykonať
+* **funkcia** predstavuje výpočet nejakej hodnoty
+
+**Príklad:**
+
+{% highlight pascal %}
+program procedures_and_functions;
+
+{Procedura nemá návratovú hodnotu}
+procedure procedura(parameter: integer);
+var  a : byte;
+begin
+  a:=10;
+  writeln(a);
+  writeln(parameter)
+end;
+
+{Funkcia musí vrátiť nejakú hodnotu}
+function funkcia(parameter: integer): integer;
+begin
+  funkcia:=parameter * parameter;
+end;
+
+var tmp: integer;
+begin
+  writeln('Volame proceduru...');
+  procedura(20);
+
+  writeln('Volame funkciu...');
+  tmp:=funkcia(9);
+  writeln(tmp)
+end.
+{% endhighlight %}
+
+### Predávanie parametrov: hodnotou vs odkazom
+
+* parametre pred ktorými **nie** je kľúčové slovo **var**, sú predávané hodnotou
+* parametre pred ktorými **je** kľúčové slovo **var**, sú predávané odkazom
+
+**Príklad:**
+
+{% highlight pascal %}
+program predavanie_parametrov;
+
+procedure parameter_hodnotou(parameter: integer);
+begin
+  parameter:=20;
+end;
+
+procedure parameter_odkazom(var parameter: integer);
+begin
+  parameter:=20;
+end;
+
+
+var v: integer;
+begin
+  v:=10;
+
+  parameter_hodnotou(v);
+  writeln(v);
+
+  parameter_odkazom(v);
+  writeln(v);
+end.
+{% endhighlight %}
+
+### Faktoriál
+Napíšte funkciu **faktorial**, ktorá spočíta faktoriál čísla, ktoré dostane ako parameter.
+
+**Poznámka:** Skúšajte to len na malých číslach.
+
+### Fibonacci
+Napíšte funkciu **fibonacci**, ktorá spočíta **n**-té Fibonacciho číslo (**n** je parameter funkcie).
+
+Definícia Fibonacciho čísla:
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/675bed5fe321790188f33216cfe2f97c39a04633"/>
+
+### NSD
+Prepíšte svojú implementáciu Euklidovho algoritmu do funkcie **nsd** tak, že bude používať procedúru **swap**, ktorú si napíšete tiež. U procedúry **swap** použite predávanie odkazom.
+
+### 2. najmenší prvok z N
+Napíšte funkciu, ktorá vráti druhý najväčší prvok z pola, ktoré dostane na vstup (kľudne si predajte dĺžku poľa parametrom).
+
+### k-tý najmenší prvok z N
+Zovšeobecnite vašu predchádzajúcu funkciu, tak aby vrátila k-tý najmenší prvok, **k** bude ďaľší parameter funkcie.
+
+# Domáce úlohy
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinné domáce úlohy:
+**PPPPP 5.3 Setřídění posloupnosti** a **Řezání dřeva na zimu**.
+
+**Termín odovzdania: 8. 11. 2016 (23:59)**
