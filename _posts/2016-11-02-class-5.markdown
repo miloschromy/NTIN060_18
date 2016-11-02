@@ -7,7 +7,7 @@ categories: NPRG030
 
 # Úlohy
 
-## Test na syntax pascalu
+## Test na syntax Pascalu
 
 Rozhodnite čo robia nasledujúce programy:
 
@@ -180,3 +180,5 @@ V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinn
 **PPPPP 5.3 Setřídění posloupnosti** a **Řezání dřeva na zimu**.
 
 **Termín odovzdania: 8. 11. 2016 (23:59)**
+
+**Poznámka: Začnite premýšľať nad témou svojho zápočtového programu a svoje návrhy mi môžete pomaly začat posielať.**
