@@ -82,6 +82,7 @@ return a
 {% endhighlight %}
 
 **Naviac:**
+
 * **Dokážte správnosť tohto algoritmu.**
 * **Aká je pamäťová a časová zložitosť tohto algoritmu?**
 
