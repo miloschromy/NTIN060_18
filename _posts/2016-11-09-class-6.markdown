@@ -108,6 +108,7 @@ Napíšte funkciu **dec2bin**, ktorá dostane na vstup jedno číslo v desiatkov
 Pre prácu s textovými súbormi sa používa dátový typ **text**, tzn. **var f: text**.
 
 Základné príkazy pre prácu so súbormi:
+
 * **assign(f, cesta)** - pripojí do premennej **f** súbor nachádzajúci sa na danej ceste.
 Cesta môže byť zadaná relatívne (vzhľadom k zložke z ktorej spúštate váš program) napr. **in.txt** alebo absolútne napr. **C:\in.txt**.
 * **reset(f)** - otvorí súbor **f** pre čítanie.
