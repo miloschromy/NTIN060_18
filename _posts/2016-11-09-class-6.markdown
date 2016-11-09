@@ -1,0 +1,172 @@
+---
+layout: post
+title:  "Cvičenie č. 6 - Reťazce a práca so súbormi"
+date: 2016-11-09 1:01:00 +0100
+categories: NPRG030
+---
+# Typ "char" a "string"
+
+* **char** je špeciálný prípad celého čísla, ktoré pascal interpretuje ako jeden z 256 znakov [ASCII tabuľky](http://www.ascii-code.com/).
+* **string** je reťazec **char**-ov. Jeho dĺžka je 255, ak nie je špecifikované inak.
+
+### Základné funkcie pre prácu s **char**-mi a **string**-ami
+
+* **chr(b:byte): char** - funkcia, ktorá skonvertuje celočíselnú hodnotu **b** na typ **char**.
+* **ord(x): longint** - funkcia, ktorá skonvertuje ľubovoľný ordinálny typ na celé číslo.
+Medzi ordinálne typy patria všetky celočíselné typy: **integer**, **shortint**, **longint** + **char** a ďaľšie.
+* **str(x; var s: string)** - procedúra, ktorá do premennej **s** uloží reťazcovú reprezentáciu celého čisla **x**.
+* **val(s: string;var x; code: integer)** - procedúra, ktorá vezme reťazec uložený v premennej **s** a uloží jeho
+celočíselnú reprezentáciu do premennej **x**. Ak nastane chyba, napr. reťazec na vstupe nereprezentuje číslo, tak uloží do premennej
+**code** index chybného znaku. Ak je všetko ok, do **code** vloží 0.
+* **length(s:string): integer** - funkcia, ktorá vráti dĺžku reťazca **s**.
+
+### Príklady:
+
+1.)
+{% highlight pascal %}
+program kody;
+
+var i : integer;
+
+begin
+  for i:=0 to 255 do
+    writeln(i,': ', chr(i));
+end.
+{% endhighlight %}
+
+2.)
+{% highlight pascal %}
+program opisovacVstupu;
+
+var c : char;
+
+begin
+  { Nacitame kym nenarazime na koniec vstupu,
+    na klavesnici sa zada ako Ctrl + Z}
+  while not(EOF) do
+    begin
+      read(c);  
+      write(c);
+    end;
+end.
+{% endhighlight %}
+
+3.)
+{% highlight pascal %}
+program pracaSoStringami;
+
+var str1, str2: string; {dlzka 255}
+    str3: string[10]; {dlzka 10}
+    c: char;
+    n: integer;
+begin
+    readln(str1);
+    readln(str2);
+
+    writeln('Retazec str1:');
+    writeln(str1);
+
+    writeln('Konkatenacia str1 a str2');
+    writeln(str1 + str2);
+
+    writeln('Znak na pozicii 1 v retazci str1:');
+    c := str1[1];
+    writeln(c);
+
+    writeln('Dlzka str1:');
+    n:=length(str1);
+    writeln(n);
+end.
+{% endhighlight %}
+
+## Úlohy
+
+### Je zadaný znak cifra?
+
+Napíšte funkciu **isDigit**, ktorá dostane na vstup jeden **char** a vráti **True** ak ide o číslo a **False** inak.
+
+### Caps Lock
+
+Napíšte funkciu **toUpperCase**, ktorá dostane na vstup jeden **char** a ak ide o malé písmeno, tak ho prevedie na velké.
+
+### Načítanie čísla
+
+Napíšte si vlastnú funkcu **toInt**, ktorá dostane na vstup jeden reťazec **s**.
+Ak **s** predstavuje celé čislo, tak vráti jeho hodnotu ako **integer**, inak vráti -1.
+
+**Na zamyslenie:**
+
+* **Ako by ste naprogramovali inverznú funkciu toString?**
+* **Ako by ste upravili váš kód, ak by na vstup dostal číslo v binárnej sústave?**
+
+### Prevod do dvojkovej sústavy
+
+Napíšte funkciu **dec2bin**, ktorá dostane na vstup jedno číslo v desiatkovej sústave ako reťazec a vráti jeho binárnu reprezentáciu, tiež ako reťazec.
+
+# Práca so súbormi
+
+Pre prácu s textovými súbormi sa používa dátový typ **text**, tzn. **var f: text**.
+
+Základné príkazy pre prácu so súbormi:
+* **assign(f, cesta)** - pripojí do premennej **f** súbor nachádzajúci sa na danej ceste.
+Cesta môže byť zadaná relatívne (vzhľadom k zložke z ktorej spúštate váš program) napr. **in.txt** alebo absolútne napr. **C:\in.txt**.
+* **reset(f)** - otvorí súbor **f** pre čítanie.
+* **rewrite(f)** - otvorí súbor **f** pre zápis, ak súbor už existoval, tak ho prepíše.
+* **append(f)** - otvorí súbor **f** pre zápis, ak súbor už existoval, tak ďaľšie zápisy k nemu pripojí.
+* **EOF(f)** - koniec vstupu súboru f.
+* **EOLN(f)** - koniec riadku súboru f.
+* **read(f, x)** - načítanie zo súboru **f**, funguje rovnako ako zo štandardného vstupu.
+* **write(f, x)** - zapisovanie do súboru **f**, funguje rovnako ako do štandardného výstupu.
+
+### Príklad:
+
+{% highlight pascal %}
+program skopirujSubor;
+
+var c:char;
+    f:text;
+    g:text;
+
+begin
+    assign(f,'in.txt');
+    assign(g,'out.txt');
+    reset( f );
+    rewrite( g );
+
+    while not EOF(f) do
+        begin
+            read(f,c);
+            write(g, c);
+        end;
+    close(f);
+    close(g);
+end.
+{% endhighlight %}
+
+## Úlohy
+
+Stiahnite si súbor [in.txt]({{site.baseurl}}/src/class6/numbers.txt) a používajte ho ako vstup pre všetky úlohy v tejto časti.
+
+### Počet znakov
+
+Spočítajte koľko znakov sa nachádza v súbore **numbers.txt** a toto číslo vypíšte na štandardný výstup.
+
+### Charakteristika distribúcie
+
+Spočítajte základné charakteristiky distribúcie čísel, ktoré sa nachádzajú v súbore **numbers.txt**.
+Začnite postupne od najjednoduchších po tie zložitejšie:
+
+* **min** a **max**
+* **priemer** a **rozptyl**
+* **medián**
+* **histogram** - rozdelte interval **[min, max]** na niekoľko rovnakých častí a spočítajte koľko čísel zo súboru spadne do každej časti.
+
+Výstupy vypisujte na štandardný výstup a aj do nejakého súboru.
+
+# Domáce úlohy
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinné domáce úlohy:
+**Palindromní věta** a **PPPPP 3.6 Soustavy**.
+
+**Termín odovzdania: 15. 11. 2016 (23:59)**
+
+**Poznámka: Začnite premýšľať nad témou svojho zápočtového programu a svoje návrhy mi môžete posielať.**
