@@ -180,6 +180,7 @@ Definícia Fibonacciho čísla:
 
 **Riešenie**
 {% highlight pascal %}
+{ Nerekurzivne riesenie }
 function fibonacci(n: integer): integer;
 var i, f0, f1, tmp: integer;
 begin
@@ -235,7 +236,7 @@ Napíšte funkciu, ktorá vráti druhý najväčší prvok z pola, ktoré dostan
 type
   tArray = array[1..1000] of integer;
 
-{Predpokladame, ze pole na vstupe bude dlzky aspon 2}
+{ Predpokladame, ze pole na vstupe bude dlzky aspon 2 }
 function second_smallest(arr: tArray; len: integer): integer;
 var first, second, i: integer;
 begin
