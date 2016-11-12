@@ -162,6 +162,7 @@ Napíšte funkciu **faktorial**, ktorá spočíta faktoriál čísla, ktoré dos
 
 **Riešenie**
 {% highlight pascal %}
+{ Nerekurzivne riesenie }
 function faktorial(n: integer): integer;
 var i : integer;
 begin
