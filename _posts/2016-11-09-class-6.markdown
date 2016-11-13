@@ -85,9 +85,30 @@ end.
 
 Napíšte funkciu **isDigit**, ktorá dostane na vstup jeden **char** a vráti **True** ak ide o číslo a **False** inak.
 
+**Riešenie**
+{% highlight pascal %}
+function isDigit(c: char): boolean;
+begin
+  isDigit := (c >= '0') and (c <= '9');
+  { ekvivalentne mozeme podmienku napisat
+    ako (ord(c) >= ord('0')) and (ord(c) <= ord('9')) }
+end;
+{% endhighlight %}
+
 ### Caps Lock
 
 Napíšte funkciu **toUpperCase**, ktorá dostane na vstup jeden **char** a ak ide o malé písmeno, tak ho prevedie na velké.
+
+**Riešenie**
+{% highlight pascal %}
+function toUpperCase(c: char): char;
+begin
+  if (c >= 'a') and (c <= 'z') then
+    toUpperCase := chr(ord(c) - (ord ('a') - ord('A')))
+  else
+    toUpperCase := c;
+end;
+{% endhighlight %}
 
 ### Načítanie čísla
 
@@ -99,9 +120,44 @@ Ak **s** predstavuje celé čislo, tak vráti jeho hodnotu ako **integer**, inak
 * **Ako by ste naprogramovali inverznú funkciu toString?**
 * **Ako by ste upravili váš kód, ak by na vstup dostal číslo v binárnej sústave?**
 
+**Riešenie**
+{% highlight pascal %}
+function toInt(s: string): integer;
+var i: integer;
+begin
+  i := 1;
+  toInt := 0;
+  while (i <= length(s)) and isDigit(s[i]) do begin
+    toInt := toInt * 10 + ord(s[i]) - ord('0');
+    inc(i);
+  end;
+  if i <> length(s) + 1 then
+    toInt := -1;
+end;
+{% endhighlight %}
+
 ### Prevod do dvojkovej sústavy
 
 Napíšte funkciu **dec2bin**, ktorá dostane na vstup jedno číslo v desiatkovej sústave ako reťazec a vráti jeho binárnu reprezentáciu, tiež ako reťazec.
+
+**Riešenie**
+{% highlight pascal %}
+function dec2bin(num: integer): string;
+var rem: integer;
+begin
+  if num = 0 then begin
+    dec2bin := '0';
+  end else begin
+    rem := 0;
+    dec2bin := '';
+    while num > 0 do begin
+      rem := num mod 2;
+      dec2bin := chr(ord('0') + rem) + dec2bin;
+      num := num div 2;
+    end;
+  end;
+end;
+{% endhighlight %}
 
 # Práca so súbormi
 
@@ -146,7 +202,7 @@ end.
 
 ## Úlohy
 
-Stiahnite si súbor [in.txt]({{site.baseurl}}/src/class6/numbers.txt) a používajte ho ako vstup pre všetky úlohy v tejto časti.
+Stiahnite si súbor **numbers.txt** (pre [windows]({{site.baseurl}}/src/class6/windows/numbers.txt), pre [linux/mac]({{site.baseurl}}/src/class6/unix/numbers.txt)) a používajte ho ako vstup pre všetky úlohy v tejto časti.
 
 ### Počet znakov
 

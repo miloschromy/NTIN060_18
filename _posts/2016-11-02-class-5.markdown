@@ -238,7 +238,7 @@ type
   tArray = array[1..1000] of integer;
 
 { Predpokladame, ze pole na vstupe bude dlzky aspon 2 }
-function second_smallest(arr: tArray; len: integer): integer;
+function secondSmallest(arr: tArray; len: integer): integer;
 var first, second, i: integer;
 begin
   first := arr[1];
@@ -272,7 +272,7 @@ begin
     min := v2;
 end;
 
-function kth_smallest(arr: tArray; len, k: integer): integer;
+function kthSmallest(arr: tArray; len, k: integer): integer;
 var smallest: tArray;
     i, j: integer;
 begin
