@@ -233,6 +233,7 @@ schopný previesť čislo v desiatkovej sústave do ľubovoľnej inej sústavy. 
 **Príklad**
 
 **Vstup:** 5 11 2 101 7
+
 * **11** v 5-kovej sústave je **6** v 10-kovej sústave
 * **101** v 2-kovej sústave je **5** v 10-kovej sústave
 * **6 + 5 = 11**, **6 - 5 = 1**, **6 * 5 = 30**, **6 div 5 = 1**
