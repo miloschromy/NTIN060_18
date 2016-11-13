@@ -225,4 +225,17 @@ V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinn
 
 **Termín odovzdania: 15. 11. 2016 (23:59)**
 
+**Hint pre PPPPP 3.6 Soustavy:**
+
+Najjednoduchšie riešenie tejto DÚ spočíva v úprave riešenia úlohy **Načítanie čísla**, tak aby ste boli schopný načítať číslo z ľubovolnej sústavy do integeru (tzn. do desiatkovej sústavy). Túto funkciu použijete na načítanie prvých dvoch čísel. Potom upravíte riešenie úlohy **Prevod do dvojkovej sústavy** tak, aby ste boli
+schopný previesť čislo v desiatkovej sústave do ľubovoľnej inej sústavy. Túto funkciu použijete na vypísanie výsledkov.
+
+**Príklad**
+
+**Vstup:** 5 11 2 101 7
+* **11** v 5-kovej sústave je **6** v 10-kovej sústave
+* **101** v 2-kovej sústave je **5** v 10-kovej sústave
+* **6 + 5 = 11**, **6 - 5 = 1**, **6 * 5 = 30**, **6 div 5 = 1**
+* čísla **11**, **1**, **30**, **1** v 10-tkovej sústave sú čísla **14**, **1**, **42**, **1** 7-kovej sústave
+
 **Poznámka: Začnite premýšľať nad témou svojho zápočtového programu a svoje návrhy mi môžete posielať.**
