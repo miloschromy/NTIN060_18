@@ -1,0 +1,190 @@
+---
+layout: post
+title:  "Cvičenie č. 7 - Úvod do rekurzie"
+date: 2016-11-16 1:01:00 +0100
+categories: NPRG030
+---
+# Rekurzia
+
+**Základná myšlienka:** súčasťou podprogramu (procedúry alebo funkcie) je volanie toho istého podprogramu. Takémuto volaniu sa hovorí **rekurzia**.
+Keďže nechceme rekurzívne volať podprogamy do nekonečna, potrebujeme aby každá vetva rekurzie bola ohraničená **ukončujúcou podmienkou**.
+
+**Príklad**
+
+{% highlight pascal %}
+program recursion_basic;
+
+procedure stars(n: integer);
+begin
+  if n = 0 then begin
+    ;  { ukoncovacia podmienka rekurzie }
+  end else begin
+    write('*');
+    stars(n - 1);   { rekurzivne volanie}
+  end;
+end;
+
+var num, i: integer;
+begin
+  readln(num);
+
+  { vypisanie num hviezdiciek cyklom }
+  for i := 1 to num do
+    write('*');
+  writeln;
+
+  { vypisanie num hviezdiciek rekurziou}
+  stars(num);
+  writeln;
+end.
+{% endhighlight %}
+
+# Úlohy
+
+**Všetky riešenia v tejto časti musia používať rekurziu!**
+
+### Faktoriál druhýkrát
+
+Napíšte funkciu **factorial**, ktorá spočíta faktoriál čísla, ktoré dostane ako parameter.
+
+### Fibonacci druhýkrát
+
+Napíšte funkciu **fibonacci**, ktorá spočíta **n**-té fibonacciho čislo (**n** dostane ako parameter).
+
+### Štvorce
+
+Napíšte funkciu **writeSquare**, ktorá dostane ako jeden zo vstupov velkosť štvorca **n** a rekurzívne najprv vykreslí štvorec velkosti **n**,
+do jeho stredu vykreslí štvorec velkosti **n-2**, **n-4**, ..., **0**. Štvorce na jednotlivých úrovniach vykreslite rôznými znakmi, tak aby boli rozlíšitelné.
+
+**Príklad**
+
+**n=1**
+{% highlight pascal %}
++
+{% endhighlight %}
+**n=2**
+{% highlight pascal %}
+++
+++
+{% endhighlight %}
+**n=3**
+{% highlight pascal %}
++++
++o+
++++
+{% endhighlight %}
+**n=5**
+{% highlight pascal %}
++++++
++ooo+
++o+o+
++ooo+
++++++
+{% endhighlight %}
+**n=10**
+{% highlight pascal %}
+++++++++++
++oooooooo+
++o++++++o+
++o+oooo+o+
++o+o++o+o+
++o+o++o+o+
++o+oooo+o+
++o++++++o+
++oooooooo+
+++++++++++
+{% endhighlight %}
+
+**Hint**
+
+Použite funkciu **gotoXY**:
+{% highlight pascal %}
+program square_simple;
+
+uses Crt; { naimportujeme modul obsahujuci funkciu gotoXY a clrScr}
+
+var size, x, y: integer;
+begin
+  readln(size);
+  clrScr; {vycistime konzolu }
+
+  for x := 1 to size do
+    for y :=1 to size do begin
+      gotoXY(x, y); {pred vypisom sa posunieme sa na poziciu x,y}
+      write('*');
+    end;
+
+  { presunieme kurzor na koniec,
+   aby neprekazal na vyslednom obrazku}
+  gotoXY(1, size + 1);
+end.
+{% endhighlight %}
+
+Výstup pre **size=5**:
+{% highlight pascal %}
+*****
+*****
+*****
+*****
+*****
+{% endhighlight %}
+
+### Binárne vyhľadávanie druhýkrát
+
+Napíšte rekurzívnu implementáciu binárneho vyhľadávania v zotriedenom poli.
+
+Kostra algoritmu:
+
+{% highlight pascal %}
+program binary_search;
+
+{Definujeme si specialny typ, ktory budeme pouzivat
+ pre vsetky polia }
+type
+    tArray = array[1..1000] of integer;
+
+function binarySearch(arr: tArray;
+                      element, left, right: integer): boolean;
+begin
+  { vasa implementacia }
+end;
+
+var testArray: tArray;
+begin
+ {...}
+end.
+{% endhighlight %}
+
+### Batoh
+
+Na vstup dostanete **pole s hodnotami mincí** a **cieľovú sumu**.
+Vašou úlohou je vypísať všetky podmnožiny mincí z poľa, ktorých súčet sa rovná cieľovej sume.
+Predpokladajte, že každá minca je unikátna, ale aj napriek tomu môžu mať mince na vstupe rovnaké hodnoty.
+Na výstup vypíšte každú vhodnú pomnožinu ako zoznam indexov mincí zo vstupného poľa.
+
+**Príklad**
+
+**Vstup:**:
+{% highlight python %}
+mince = [1, 2, 2, 1, 2]
+cielova_suma = 4
+{% endhighlight %}
+
+**Výstup:**
+{% highlight pascal %}
+1 2 4
+1 3 4
+1 4 5
+2 3
+2 5
+3 5
+{% endhighlight %}
+
+# Domáce úlohy
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinné domáce úlohy:
+**Generování kombinací** a **Všechny permutace řetězce**.
+
+**Termín odovzdania: 29. 11. 2016 (23:59)**
+
+
+**Poznámka: Začnite premýšľať nad témou svojho zápočtového programu a svoje návrhy mi môžete začať posielať.**
