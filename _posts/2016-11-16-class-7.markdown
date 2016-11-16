@@ -181,8 +181,7 @@ cielova_suma = 4
 {% endhighlight %}
 
 # Domáce úlohy
-V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoje 2 povinné domáce úlohy:
-**Generování kombinací** a **Všechny permutace řetězce**.
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoju domácu úlohu: **Generování kombinací**.
 
 **Termín odovzdania: 29. 11. 2016 (23:59)**
 
