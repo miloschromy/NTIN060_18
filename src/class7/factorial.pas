@@ -1,12 +1,11 @@
 program factorial;
 
-
 function factorial(n: integer): integer;
 begin
-  if n > 0 then
-    factorial := n * factorial(n - 1)
+  if n = 0 then
+    factorial := 1
   else
-    factorial := 1;
+    factorial := n * factorial(n - 1);
 end;
 
 var num: integer;

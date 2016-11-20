@@ -3,7 +3,11 @@ program binary_search;
 type
     tArray = array[1..1000] of integer;
 
-function binarySearch(arr: tArray; element, left, right: integer): boolean;
+function binarySearch(arr: tArray;    { vstupne pole}
+                      element,        { hladany prvok}
+                      left,           { lava hranica intervalu }
+                      right: integer  { prava hranica intervalu }
+                      ): boolean;
 var half: integer;
 begin
   if right < left then

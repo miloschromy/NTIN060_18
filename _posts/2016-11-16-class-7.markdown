@@ -47,9 +47,33 @@ end.
 
 Napíšte funkciu **factorial**, ktorá spočíta faktoriál čísla, ktoré dostane ako parameter.
 
+**Riešenie**
+{% highlight pascal %}
+function factorial(n: integer): integer;
+begin
+  if n = 0 then
+    factorial := 1
+  else
+    factorial := n * factorial(n - 1);
+end;
+{% endhighlight %}
+
 ### Fibonacci druhýkrát
 
 Napíšte funkciu **fibonacci**, ktorá spočíta **n**-té fibonacciho čislo (**n** dostane ako parameter).
+
+**Riešenie**
+{% highlight pascal %}
+function fibonacci(n: integer): integer;
+begin
+  if n = 0 then
+    fibonacci := 0
+  else if n = 1 then
+    fibonacci := 1
+  else
+    fibonacci := fibonacci(n - 1) + fibonacci(n - 2);
+end;
+{% endhighlight %}
 
 ### Štvorce
 
@@ -129,6 +153,38 @@ Výstup pre **size=5**:
 *****
 {% endhighlight %}
 
+**Riešenie**
+{% highlight pascal %}
+program square;
+
+uses Crt;
+
+procedure writeSquare(x, y, size: integer; c: char);
+var i, j: integer;
+begin
+  if size > 0 then begin
+    for i := 0 to size - 1 do
+      for j:= 0 to size - 1 do begin
+        gotoXY(x + i, y + j);
+        write(c);
+      end;
+    if c = '+' then
+      c := 'o'
+    else
+      c := '+';
+    writeSquare(x + 1, y + 1, size - 2, c);
+  end;
+end;
+
+var size: integer;
+begin
+  readln(size);
+  ClrScr;
+  writeSquare(1, 1, size, '+');
+  gotoXY(1,size + 1);
+end.
+{% endhighlight %}
+
 ### Binárne vyhľadávanie druhýkrát
 
 Napíšte rekurzívnu implementáciu binárneho vyhľadávania v zotriedenom poli.
@@ -155,6 +211,45 @@ begin
 end.
 {% endhighlight %}
 
+**Riešenie**
+{% highlight pascal %}
+program binary_search;
+
+type
+    tArray = array[1..1000] of integer;
+
+function binarySearch(arr: tArray;    { vstupne pole}
+                      element,        { hladany prvok}
+                      left,           { lava hranica intervalu }
+                      right: integer  { prava hranica intervalu }
+                      ): boolean;
+var half: integer;
+begin
+  if right < left then
+    binarySearch := false
+  else begin
+    half := (left + right) div 2;
+    if arr[half] = element then
+      binarySearch := true
+    else if element < arr[half] then
+      binarySearch := binarySearch(arr, element, left, half - 1)
+    else
+      binarySearch := binarySearch(arr, element, half + 1, right);
+  end;
+end;
+
+var arr: tArray;
+
+begin
+  arr[1] := 1;
+  arr[2] := 4;
+  arr[3] := 6;
+  arr[4] := 10;
+  arr[5] := 12;
+  writeln(binarySearch(arr, 1, 1, 5));
+end.
+{% endhighlight %}
+
 ### Batoh
 
 Na vstup dostanete **pole s hodnotami mincí** a **cieľovú sumu**.
@@ -178,6 +273,44 @@ cielova_suma = 4
 2 3
 2 5
 3 5
+{% endhighlight %}
+
+**Riešenie**
+{% highlight pascal %}
+program knapsack;
+
+Uses sysutils; { kvoli funkcii IntToStr() }
+
+type
+    tArray = array[1..1000] of integer;
+
+procedure findSolutions(coins: tArray;
+                        numCoins, targetSum, idx, sum: integer;
+                        solution: String);
+begin
+  if idx <= numCoins then begin
+    { prvok na pozici idx pridam do riesenia }
+    findSolutions(coins, numCoins, targetSum, idx + 1,
+                  sum + coins[idx], solution + IntToStr(idx) + ' ');
+
+    { prvok na pozici idx NEpridam do riesenia }
+    findSolutions(coins, numCoins,
+                  targetSum, idx + 1, sum, solution);
+  end else begin
+    if sum = targetSum then
+      writeln(solution);
+  end;
+end;
+
+var coins: tArray;
+begin
+  coins[1] := 1;
+  coins[2] := 2;
+  coins[3] := 2;
+  coins[4] := 1;
+  coins[5] := 2;
+  findSolutions(coins, 5, 4, 1, 0, '');
+end.
 {% endhighlight %}
 
 # Domáce úlohy
