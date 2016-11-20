@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Cvičenie č. 8 - Odpadá kvôli DOD"
+date: 2016-11-23 1:01:00 +0100
+categories: NPRG030
+---
+
+Cvičenie 23. 11. 2016 odpadá kvôli **Dňu otvorených dverí na MFF**.
+Pre nadšencov, ktorí si chcú ešte precvičiť rekurziu a vykreslovanie do konzole zadávam
+bonusovú úlohu nižšie.
+
+
+### Bonusová úloha: Sierpinského trojuholník
+
+**Sierpinského trojuholník** je fraktál, ktorý je možné vytvoriť rekurzivným vykreslovaním
+rovnostranných trojuholníkov (podobne ako to bolo u štvorcov na poslednej hodine).
+
+Popis konštrukcie tohto fraktálu aj s peknými obrázkami nájdete
+na [anglickej wikipédii](https://en.wikipedia.org/wiki/Sierpinski_triangle).
+
+Vašou úlohou je naprogramovať vykreslovanie tohto fraktálu do konzole. Jediný vstup
+programu je **rád Sierpinského trojuholníku**, tzn. počet vnorených trojuholníkov.
+
+**Sierpinského trojuholník rádu 4** vykreslený do konzole môže vyzerať napr. takto:
+
+{% highlight pascal %}
+                *
+               * *
+              *   *
+             * * * *
+            *       *
+           * *     * *
+          *   *   *   *
+         * * * * * * * *
+        *               *
+       * *             * *
+      *   *           *   *
+     * * * *         * * * *
+    *       *       *       *
+   * *     * *     * *     * *
+  *   *   *   *   *   *   *   *
+ * * * * * * * * * * * * * * * *
+{% endhighlight %}
+
+**Za správne riešenie, ktoré mi pošlete mailom môžete dostať až 25 bonusových bodov.**
+
+**Termín odovzdania: 29. 11. 2016 (23:59)**
