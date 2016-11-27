@@ -76,8 +76,8 @@ tailRecursiveSum(0, 15);
 V rekurzívnom volaní v hĺbke **x** si spočítame aktuálny medzivýsledok, ktorý
 potom pomocou parametru predáme rekurzívnemu volaniu do hĺbky **x + 1**. Tým
 nám odpadáva priama závislosť výsledku v hĺbke **x** na vysledku v hĺbke **x + 1**.
-To pre Pascal znamená, že mu stačí si vždy v pamäti držať iba kontext aktuálneho
-rekurzívneho volania a len šikovne si predať výsledok do nasledujúcej úrovne.
+To pre **Pascal** znamená, že mu stačí si vždy v pamäti držať iba kontext aktuálneho
+rekurzívneho volania a len si šikovne predať výsledok do nasledujúcej úrovne.
 
 ## Úlohy na koncovú rekurziu
 
