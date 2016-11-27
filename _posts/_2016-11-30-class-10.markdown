@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "Cvičenie č. 9 - Koncová rekurzia (tail recursion)"
+date: 2016-11-27 1:01:00 +0100
+categories: NPRG030
+---
+
+# Rekurzia vs koncová rekurzia
+
+## Príklad: Súčet čísel od 1 do n
+
+**Riešenie s obyčajnou rekurziou:**
+
+{% highlight pascal %}
+program basic_recursion;
+
+function recursiveSum(n: integer): integer;
+begin
+  if n = 0 then
+    recursiveSum := n
+  else
+    recursiveSum := n + recursiveSum(n - 1);
+end;
+
+begin
+  recursiveSum(5);
+end.
+{% endhighlight %}
+
+Pascal vyhodnotí volanie **recursiveSum(5)** nasledovne:
+
+{% highlight pascal %}
+recursiveSum(5);
+5 + recursiveSum(4);
+5 + (4 + recursiveSum(3));
+5 + (4 + (3 + recursiveSum(2)));
+5 + (4 + (3 + (2 + recursiveSum(1))));
+5 + (4 + (3 + (2 + 1)));
+15
+{% endhighlight %}
+
+Výsledok rekurzívneho volania v hĺbke **x** závisí na výsledku volania v hĺbke **x + 1**.
+To znamená, že **Pascal** si musí držať v pamäti kontext všetkých rekuzívnych volaní až kým
+sa nedostane k ukončovacej podmienke.
+
+**Riešenie s koncovou rekurziou:**
+
+{% highlight pascal %}
+program tail_recursion;
+
+function tailRecursiveSum(n, sum_accumulator: integer): integer;
+begin
+  if n = 0 then
+    tailRecursiveSum := sum_accumulator
+  else
+    tailRecursiveSum := tailRecursiveSum(n - 1, sum_accumulator + n);
+end;
+
+begin
+  tailRecursiveSum(5, 0);
+end.
+{% endhighlight %}
+
+Pascal vyhodnotí volanie **tailRecursiveSum(5)** nasledovne:
+
+{% highlight pascal %}
+tailRecursiveSum(5, 0);
+tailRecursiveSum(4, 5);
+tailRecursiveSum(3, 9);
+tailRecursiveSum(2, 12);
+tailRecursiveSum(1, 14);
+tailRecursiveSum(0, 15);
+15
+{% endhighlight %}
+
+V rekurzívnom volaní v hĺbke **x** si spočítame aktuálny medzivýsledok, ktorý
+potom pomocou parametru predáme rekurzívnemu volaniu do hĺbky **x + 1**. Tým
+nám odpadáva priama závislosť výsledku v hĺbke **x** na vysledku v hĺbke **x + 1**.
+To pre Pascal znamená, že mu stačí si vždy v pamäti držať iba kontext aktuálneho
+rekurzívneho volania a len šikovne si predať výsledok do nasledujúcej úrovne.
+
+## Úlohy na koncovú rekurziu
+
+### Faktoriál tretíkrát
+
+Pomocou **koncovej rekurzie** napíšte funkciu **tailFactorial**, ktorá bude počítať faktoriál čísla **n**.
+
+### Fibonacci tretíkrát
+
+Pomocou **koncovej rekurzie** napíšte funkciu **tailFibonacci**, ktorá bude počítať **n**-té **Fibonacciho číslo**.
+
+**Otázka na záver: Je možné každú rekurziu prepísať na koncovú rekurziu?**
+
+## Ďaľšie úlohy na rekurziu
+
+Už nemusíte používať koncovú rekurziu.
+
+### Prefixový vs infixový vs postfixový zápis aritmetického výrazu
+
+Bežnému vyjadreniu aritmetických výrazov, napr.:
+{% highlight pascal %} (5 + ((1 + 2) * 4)) {% endhighlight %}
+sa hovorí **infixový zápis**, pretože
+operátor sa vždy nachádza medzi (**in**) operandami. Alternatívne môžme ten istý výraz vyjadriť
+v **postfixovom zápise** ako:
+{% highlight pascal %} 5 1 2 + 4 * +  {% endhighlight %}
+alebo v **prefixovom zápise** ako:
+{% highlight pascal %} + 5 * + 1 2 4 {% endhighlight %}
+
+**Prefixový** alebo **postfixový** zápis je narozdiel od **infixového** jednoznačný a preto u nich odpadáva potreba
+definovať prioritu operátorov alebo zátvorky. To samozrejme zjendodušuje ich strojové spracovanie.
+
+**Prefixovému zápisu sa tiež hovorí [poľská notácia](https://en.wikipedia.org/wiki/Polish_notation).**
+
+### Vyhodnotenie výrazu v poľskej notácii
+
+Napíšte **rekurzívnu** funkciu, ktorá dostane na vstup výraz **v poľskej notácii** ako reťazec a ona vráti jeho hodnotu.
+Napr.: pre vstup **+ 1 2** vráti hodnotu **3**.
+
+# Domáca úloha
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoju domácu úlohu: **Všechny permutace řetězce**.
+
+**<span class="red">Poznámka: Vaše riešenie musí používať rekurziu, inak dostanete 0 bodov!</span>**
+
+**Termín odovzdania: 6. 12. 2016 (23:59)**
