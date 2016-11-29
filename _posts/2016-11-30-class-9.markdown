@@ -118,3 +118,7 @@ V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoju domácu 
 **<span class="red">Poznámka: Vaše riešenie musí používať rekurziu, inak dostanete 0 bodov!</span>**
 
 **Termín odovzdania: 6. 12. 2016 (23:59)**
+
+# Zápočťáky
+
+**Posúvam termín špecifikácie do 14. 12. 2016.**
