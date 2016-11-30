@@ -35,7 +35,7 @@ recursiveSum(5);
 5 + (4 + recursiveSum(3));
 5 + (4 + (3 + recursiveSum(2)));
 5 + (4 + (3 + (2 + recursiveSum(1))));
-5 + (4 + (3 + (2 + 1)));
+5 + (4 + (3 + (2 + (1 + recursiveSum(0))));
 15
 {% endhighlight %}
 
