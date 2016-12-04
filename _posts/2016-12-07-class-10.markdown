@@ -1,0 +1,168 @@
+---
+layout: post
+title:  "Cvičenie č. 10 - Zásobník a fronta (stack and queue)"
+date: 2016-12-03 1:01:00 +0100
+categories: NPRG030
+---
+
+**Zásobník (stack)** a **fronta (queue)** sú jedny zo základných dátových štruktúr, ktoré sa používaju k dočasnému ukladaniu dát.
+Tieto štruktúry taktiež určujú poradie spracovávania dát, ktoré obsahujú.
+
+Z **fronty** dáta vystupujú v rovnakom poradí, v akom do nej vstúpili. Takejto štruktúre
+sa bežne hovorí **FIFO - First In First Out**. V podstate funguje rovnako ako fronta
+v obchodoch :).
+
+Zo **zásobníku** naopak vystupujú vždy najprv dáta, ktoré doň boli vložené naposledy.
+Takejto štruktúre sa zas hovorí **LIFO - Last In First Out**. Predstavte si dieru, do ktorej
+postupne hádžete nejaké veci, vždy keď z nej chcete niečo vybrať, tak musíte začat najprv vecou,
+ktorá sa práve nachádza na vrchu.
+
+**Použitie: prehľadávanie grafov alebo stavového priestoru, vyhodnocovanie aritmetických výrazov atď.**
+
+## Zásobník
+
+Na vytvorenie **zásobníku** potrebujete len nejaký zoznam alebo pole, do ktorého si budete ukladať
+jednotlivé prvky a nejakú premennú, v ktorej si budete udržovať aktuálny počet uložených prvkov.
+Nad touto dátovou štruktúrou potom musíte definovať
+operácie, ktoré budú dodržovať vlastnosti **zásobníku**.
+
+**Ako môže vyzerať zásobník napr. v Pascale:**
+{% highlight pascal %}
+program stack;
+
+{ znovu budeme predpokladat, ze nas zasobnik nebude obsahovat viac
+  nez nejaky konstanty pocet prvkov }
+const MAX = 1000;
+
+type TData = char; { typ dat ktore budeme do zasobniku vkladat}
+
+{ Na reprezentaciu zasobniku pouzijeme typ record (struktura),
+  ktora sa pouziva na zoskupovanie niekolkych premennych.
+  K jednotlivm premennym sa potom dostaneme pomocou .
+  Napr. var rec: TStack;
+        rec.size = 10; }
+type TStack = record   
+  stack: array[1..MAX] of TData; { obsah zasobniku}
+  size: 0..MAX;                  { pocet prvkov v zasobniku }
+end;
+
+{ vrati True ak je zasobnik prazdny, inak False }
+function isEmpty(var stack: TStack): boolean;
+
+{ zinicializuje prazdny zasobnik}
+procedure init(var stack: TStack);
+
+{ vlozi jeden prvok na vrch zasobniku }
+procedure push(var stack: TStack; item: TData);
+
+{ vyberie jeden prvok zo zasobniku }
+function pop(var stack: TStack): TData;
+
+{% endhighlight %}
+
+**Poznámka: Fronta by sa dala reprezentovať úplne rovnako, akurát by bolo treba
+trochu upraviť implementáciu procedúr push a pop.**
+
+### Úloha 1: Naimplementujte si zásobník
+
+Doimplementujte funkcie a procedúry z príkladu vyššie.
+
+### Úloha 2: Uzátvorkovanie druhýkrát
+
+Napíšte funkciu **checkParenthesis**, ktorá skontroluje, že uzátvorkovanie vstupného reťazca
+je správne. Reťazec tentokrát môže obsahovať až 3 typy zátvoriek: **()[]{}** a
+otvorená zátvorka jedného typu môže byť ukončená len opačnou zátvorkou rovnakého
+typu. Na riešenie úlohy použite zásobník z predchádzajúcej úlohy.
+
+**Príklady:**
+
+{% highlight python %}
+Vstup: '{()}[]'
+Výstup: True
+{% endhighlight %}
+
+{% highlight python %}
+Vstup: '{()][]'
+Výstup: False
+{% endhighlight %}
+
+{% highlight python %}
+Vstup: '{()[]'
+Výstup: False
+{% endhighlight %}
+
+### Prefixový vs infixový vs postfixový zápis aritmetického výrazu
+
+Bežnému vyjadreniu aritmetických výrazov napr.:
+{% highlight pascal %} (5 + ((1 + 2) * 4)) {% endhighlight %}
+sa hovorí **infixový zápis**, pretože
+operátor sa vždy nachádza medzi (**in**) operandami. Alternatívne môžme ten istý výraz vyjadriť
+v **postfixovom zápise** ako:
+{% highlight pascal %} 5 1 2 + 4 * +  {% endhighlight %}
+alebo v **prefixovom zápise** ako:
+{% highlight pascal %} + 5 * + 1 2 4 {% endhighlight %}
+
+**Prefixový** alebo **postfixový** zápis je narozdiel od **infixového** jednoznačný a preto u nich odpadáva potreba
+definovať prioritu operátorov alebo zátvorky. To samozrejme zjendodušuje ich strojové spracovanie.
+
+**Prefixovému zápisu sa tiež hovorí [poľská notácia](https://en.wikipedia.org/wiki/Polish_notation).**
+
+### Bonusová úloha: Vyhodnotenie výrazu v poľskej notácii
+
+Napíšte funkciu **evalExpression**, ktorá dostane na vstup výraz **v poľskej notácii** ako reťazec a ona vráti jeho hodnotu.
+Napr.: pre vstup **+ 1 2** vráti hodnotu **3**.
+
+**Hint: Použite zásobník :)**
+
+**Počet bodov: 30**
+
+**Odovzdanie: mailom do 6. 13. 2016 (23:59)**
+
+## Prehľadávanie grafu
+
+Z prednášky by ste už mali vedieť čo je to prehľadávanie do širky - **Breadth-first search (BFS)** a
+prehľadávanie do hĺbky - **Depth-first search (DFS)**.
+
+Pre pripomenutie:
+
+**BFS:**
+
+<img src="http://i60.tinypic.com/2vuye14.gif">
+
+**DFS:**
+
+<img src="http://i60.tinypic.com/73gml4.gif">
+
+**Vezmime si tento pseudokód prehľadávania grafu**:
+
+{% highlight python %}
+graph - nejaka reprezentacia grafu
+root - vrchol v ktorom zacneme prehladavanie
+
+{ inicializacia pomocnych premennych }
+for each node n in graph:
+    { u kazdeho vrcholu si poznacime ci sme ho uz videli }
+    n.visited := False  
+
+c := empty Collection { prazdna kolekcia ktoru si este dodefinujeme }
+
+root.visited := True
+push(c, root)                      
+
+while not isEmpty(c):        
+    current := pop(c)
+    for each node n that is adjacent to current:
+        if not n.visited:
+            n.visited := True
+            push(c, n)
+
+{% endhighlight %}
+
+**Aké prehľadávanie dostaneme, ak si za Collection dosadíme zásobník a aké ak frontu?**
+
+# Domáca úloha
+V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoju domácu úlohu: **Kyblík**.
+
+**Hint: Použite napr. prehľadávanie do šírky.**
+
+**Termín odovzdania: 13. 12. 2016 (23:59)**
