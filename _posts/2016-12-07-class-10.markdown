@@ -42,7 +42,7 @@ type TData = char; { typ dat ktore budeme do zasobniku vkladat}
   Napr. var rec: TStack;
         rec.size = 10; }
 type TStack = record   
-  stack: array[1..MAX] of TData; { obsah zasobniku}
+  items: array[1..MAX] of TData; { obsah zasobniku}
   size: 0..MAX;                  { pocet prvkov v zasobniku }
 end;
 
@@ -55,7 +55,10 @@ procedure init(var stack: TStack);
 { vlozi jeden prvok na vrch zasobniku }
 procedure push(var stack: TStack; item: TData);
 
-{ vyberie jeden prvok zo zasobniku }
+{ vráti prvok z vrchu zasobnika (ale neodstrani) }
+function peek(var stack: TStack): TData;
+
+{ vrati a odstrani prvok z vrchu zasobnika }
 function pop(var stack: TStack): TData;
 
 {% endhighlight %}
