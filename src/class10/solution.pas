@@ -51,7 +51,7 @@ end;
 function checkParenthesis(str: String): boolean;
 var stack: TStack;
     i: integer;
-    current, popped: char;
+    current: char;
     ret: boolean;
 begin
   init(stack);
