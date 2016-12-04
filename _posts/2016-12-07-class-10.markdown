@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cvičenie č. 10 - Zásobník a fronta (stack and queue)"
-date: 2016-12-03 1:01:00 +0100
+date: 2016-12-07 1:01:00 +0100
 categories: NPRG030
 ---
 
