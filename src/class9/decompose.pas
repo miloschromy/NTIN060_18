@@ -14,7 +14,6 @@ begin
         s := IntToStr(i)
       else
         s := decomposition + ' + ' + IntToStr(i);
-
       decompose(n - i, s);
     end;
   end;
