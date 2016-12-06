@@ -117,7 +117,7 @@ Napr.: pre vstup **+ 1 2** vráti hodnotu **3**.
 
 **Hint: Použite zásobník :)**
 
-**Počet bodov: 30**
+**Počet bodov: 20**
 
 **Odovzdanie: mailom do 6. 13. 2016 (23:59)**
 
