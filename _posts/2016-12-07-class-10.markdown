@@ -168,4 +168,7 @@ V **[CodEx](https://codex.ms.mff.cuni.cz/codex-prg/)**-e nájdete svoju domácu 
 
 **Hint: Použite napr. prehľadávanie do šírky.**
 
+**<span class="red">Poznámka: Tentokrát máte vstup načítať zo súboru bitmap.in, nie zo štandardného vstupu.</span>**
+Pre prácu so súbormi viz. [Cvičenie č. 4]({% post_url 2016-11-09-class-6 %}).
+
 **Termín odovzdania: 13. 12. 2016 (23:59)**
