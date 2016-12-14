@@ -1,0 +1,176 @@
+---
+layout: post
+title:  "Cvičenie č. 11 - Dynamické premenné & spojový zoznam"
+date: 2016-12-14 1:01:00 +0100
+categories: NPRG030
+---
+
+Doteraz sme používali len statické premenné a preto sme napríklad vždy pracovali len s konštantne veľkým poľom.
+Ako sme si povedali už minule, statické premenné sa alokujú na **zásobník (stack)** a veľkosť týchto premenných
+musí byť známa už počas kompilácie. Vo väčšine prípadov však velkosť potrebných dátových štruktúr (napr. pole)
+nevieme. V takom prípade musíme siahnuť po dynamických premenných, ktoré sa alokujú na **haldu (heap)**.
+Práca s týmito premennými je však o niečo komplikovanejšia, viz. príklady nižšie.
+
+**Statické premenné**
+
+Toto je štandardný prístup k premenným, ktorý už poznáte:
+{% highlight pascal %}
+var a,b: integer;
+begin
+  a := 10;
+  b := 10;
+  writeln(a);
+  writeln(b);
+end.
+{% endhighlight %}
+
+Výstup:
+{% highlight bash %}
+10
+10
+{% endhighlight %}
+
+Pamäť programu vyzerá potom nasledovne:
+![]({{site.baseurl}}/assets/img/class11/StackHeap1.png)
+
+**Dynamické premenné**
+
+Prístup k premenným cez **ukazovatele (pointre)**.
+{% highlight pascal %}
+var n: ^integer; { ukazatel na integer}
+    address: ^word;
+begin
+  new(n); { zinicializujeme novy integer na halde }
+  n^ := 10; { do premennej priradime hodnotu 10}
+
+  { ziskame adresu premennej n, tzn. kam ukazuje}
+  address := addr(n);
+  writeln(address^);
+
+  { ziskame hodnotu premennej n}
+  writeln(n^);
+end.
+{% endhighlight %}
+
+Výstup:
+{% highlight bash %}
+12336
+10
+{% endhighlight %}
+
+Pamäť programu vyzerá nasledovne:
+![]({{site.baseurl}}/assets/img/class11/StackHeap2.png)
+
+V tomto príklade sme použili nový operátor **^**, ktorý sa používa jednak
+k deklarovaniu premennej typu ukazateľ na daný typ (napr. ukazateľ na integer)
+a druhak k prístupu k hodnote na adrese ukazateľa (tomu sa hovorí aj **dereferencovanie** ukazateľa).
+
+Taktiež sme použili funkciu **new**, ktorá alokuje na **halde** premennú typu daného ukazateľa.
+
+**Poznámka:** Správne by sa mali premenné po použití ešte dealokovať a uvolniť tým miesto na halde,
+ale to zatiaľ robiť nebudeme.
+
+## Úlohy
+
+Dynamické premenné sa dajú použiť k vytváraniu dynamických dátových štruktúr ako
+napr. **spojového zoznamu (linked list)**. Spojový zoznam je zložený z uzlov, kde každý uzol
+obsahuje ukazatel na svojho nasledovníka.
+
+Štruktúra spojového zoznamu v pamäti môže vyzerať nejak takto:
+![]({{site.baseurl}}/assets/img/class11/linkedlist.png)
+
+**Ukazatel, ktorý neukazuje nikam sa definuje tak, že sa doňho priradí hodnota nil.**
+
+## Naimplementujte spojový zoznam
+
+Nižšie môžete vidieť jeden z možných spôsobov definovania spojáku v pascale.
+Vašou úlohou je domplementovať chýbajúce základné operácie nad spojákom.
+
+{% highlight pascal %}
+program linked_list;
+
+type TData = integer; { typ dat, ktore budeme ukladat do spojaku }
+     TNode = record   { jeden uzol spojaku }
+      data: TData;
+      next: ^TNode;
+     end;
+    TLinkedList = record  { samotny spojak }
+      root: ^TNode;
+    end;
+
+{ zinicializuje prazdny spojak }
+procedure init(var list: TLinkedList);
+begin
+
+end;
+
+{ vypise hodnoty v spojaku na jeden riadok }
+procedure print(var list: TLinkedList);
+begin
+
+end;
+
+{ vlozi prvok na koniec spojaku }
+procedure append(var list: TLinkedList; val: TData);
+begin
+
+end;
+
+{ vlozi prvok na zaciatok spojaku }
+procedure prepend(var list: TLinkedList; val: TData);
+begin
+
+end;
+
+{ odstrani prvy vyskyt daneho prvku zo spojaku }
+procedure remove(var list: TLinkedList; val: TData);
+begin
+
+end;
+
+{ zisti ci sa dany prvok nachadza v spojaku }
+function member(var list: TLinkedList; val: TData): boolean;
+begin
+
+end;
+
+{ vrati dlzku spojaku, tj. pocet prvkov, ktory obsahuje }
+function length(var list: TLinkedList; val: TData): integer;
+begin
+
+end;
+
+{ spoji 2 spojaky do jedneho (lubovolnym sposobom) }
+procedure concat(var list1, list2, output: TLinkedList);
+begin
+
+end;
+
+{ zaradi prvok na vhodne miesto tak, aby vysledny spojak
+  bol zotriedeny, predpoklada, ze spojak na vstupe je uz zotriedeny }
+procedure insertSorted(var list1: TLinkedList; val: TData);
+begin
+
+end;
+
+{ zleje 2 zotriedene spojaky do jedneho zotriedeneho spojaku }
+procedure merge(var list1, list2, output: TLinkedList);
+begin
+
+end;
+
+var list: TLinkedList;
+
+begin
+  { ... }
+end.
+{% endhighlight %}
+
+# Domáca úloha
+Vašou domácou úlohou tentokrát je doimplemetovanie všetkých operácii nad spojovým zoznamom definovaným vyšše.
+
+**Termín odovzdania: 20. 12. 2016 (23:59)**
+
+**Spôsob odovzdania: zdrojový kód mailom**
+
+**Počet bodov: 40**
