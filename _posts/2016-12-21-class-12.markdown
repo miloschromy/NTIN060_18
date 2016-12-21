@@ -37,6 +37,7 @@ prvky (uzly) usporiadané tak, aby v ňom bolo možné rýchlo vyhľadávať. Te
 Pekná vizualizácia fungovania BST [tu](https://visualgo.net/bst){:target="_blank"}.
 
 **Na zamyslenie**:
+
 * Aká je časová zložitosť operácií **insert**, **delete**, **member**?
 * Ako súvisí binárne vyhľadávanie v zotriedenom poli s BST?
 
