@@ -1,0 +1,175 @@
+---
+layout: post
+title:  "Cvičenie č. 12 - Správa pamäte & binárne vyhľadávacie stromy"
+date: 2016-12-21 1:01:00 +0100
+categories: NPRG030
+---
+
+Na poslednej hodine sme si zaviedli ukazatele a funkciu **new**, ktorá je schopná
+naalakovať premennú daného typu na halde. Čo sa však stane ak naalokovanú premennú
+už nepotrebujeme, ako napríklad u operácii **remove** spojového zoznamu?
+Túto pamäť musíme ručne uvolniť (dealokovať) funkciou **dispose**, ktorá na vstup dostane tiež ukazateľ.
+
+**Ak však stratíme ukazateľ pred uvoľnením pamäte, tak táto časť pamäte ostane nepoužiteľná
+až do ukončenia programu**. Takáto chyba vedie často k výnimkám typu **Out Of Memory Exception (OOM)**, kedy
+si zaplníme celú haldu nepoužívanými premennými. Tomuto sa medzi programátormi hovorí tiež **leak-ovanie pamäte**.
+
+Platí nasledujúce jednoduché pravidlo: **s každým zavolaním funkcie new musí byť spárované zavolanie funkcie dospose**.
+
+V letnom semestri začenete používať jazyk **C#**, ktorý sa o správu pamäte stará sám, tzn. žiadna funkcia **dispose** u neho nie je potrebná.
+
+
+## Binárne vyhľadávacie stromy (BST - z angl. Binary Search Tree)
+
+Binárny vyhľadávací strom je dynamická dátová štruktúra založená na binárnom strome, v ktorom sú jednotlivé
+prvky (uzly) usporiadané tak, aby v ňom bolo možné rýchlo vyhľadávať. Tento strom má nasledujúce vlastnosti:
+
+* každý uzol má maximálne 2 potomkov - ľavého a pravého syna
+* každý uzol obsahuje hodnotu alebo kľúč, ktorý chceme vyhľadávať a určuje usporiadanie uzlov
+* pre každý uzol v strome platí, že ľavý resp. pravý podstrom obsahuje len kľúče menšie resp. väčšie než je kľúč aktuálneho uzlu
+
+**Základné operácie BST**:
+* **insert** - vloženie nového prvku
+* **member** - zistenie či sa prvok s danou hodnotou nachádza v strome
+* **delete** - odstránenie prvku zo stromu
+
+Pekná vizualizácia fungovania BST [tu](https://visualgo.net/bst){:target="_blank"}.
+
+**Na zamyslenie**:
+* Aká je časová zložitosť operácií **insert**, **delete**, **member**?
+* Ako súvisí binárne vyhľadávanie v zotriedenom poli s BST?
+
+### Prehľadávanie stromu do hĺbky
+
+Podľa poradia v akom prechádzame uzly v strome môžeme definovať tieto 3 typy prehľadávania:
+
+**PREORDER**
+
+* vykonaj akciu
+* prejdi ľavý podstrom
+* prejdi pravý podstrom
+
+**INORDER**
+
+* prejdi ľavý podstrom
+* vykonaj akciu
+* prejdi pravý podstrom
+
+**POSTORDER**
+
+* prejdi ľavý podstrom
+* prejdi pravý podstrom
+* vykonaj akciu
+
+**Príklad:**
+
+![]({{site.baseurl}}/assets/img/class12/bst.png){: height="250px"}
+
+Ak definujeme akciu vypísaním hodnoty uzlu, tak dostaneme tieto výstupy:
+
+* **Inorder:** A, B, C, D, E, F, G, H, I
+* **Preorder:** F, B, A, D, C, E, G, I, H
+* **Postorder:** A, C, E, D, B, H, I, G, F
+
+## Naimplementujte BST
+
+Nižšie môžete vidieť jeden z možných spôsobov definovania BST v pascale.
+Vašou úlohou je znovu domplementovať chýbajúce základné operácie nad BST.
+
+{% highlight pascal %}
+program bst;
+
+type TData = integer;
+     TNode = record
+      data: TData;
+      left: ^TNode;
+      right: ^TNode;
+     end;
+    TBinaryTree = record
+      root: ^TNode;
+    end;
+
+{ zinicializuje novy strom }
+procedure init(var tree: TBinaryTree);
+begin
+
+end;
+
+{ vykresli strom v peknom formate, napr: }
+{         2
+         / \
+        /   \
+       /     \
+      /       \
+     7         5
+    / \         \
+   /   \         \
+  2     6         9
+ / \             /
+5   8           4  
+}
+procedure pretty_print(var tree: TBinaryTree);
+begin
+
+end;
+
+{ vlozi novy prvok do stromu }
+procedure insert(var tree: TBinaryTree; val: TData);
+begin
+
+end;
+
+{ vrati true ak sa dany prvok v strome nachadza inak false }
+function member(var tree: TBinaryTree; val: TData): boolean;
+begin
+
+end;
+
+{ odstrani dany prvok zo stromu (pouzite spravne dispose!)}
+procedure remove(var tree: TBinaryTree; val: TData);
+begin
+
+end;
+
+{ vrati pocet uzlov v strome }
+function size(var tree: TBinaryTree): integer;
+begin
+
+end;
+
+{ zmaze cely strom (pouzite dispose!) }
+procedure delete(var tree: TBinaryTree);
+begin
+
+end;
+
+{ vypise hodnoty uzlov v strome v preorder poradi }
+procedure print_preorder(var tree: TBinaryTree);
+begin
+
+end;
+
+{ vypise hodnoty uzlov v strome v inorder poradi }
+procedure print_inorder(var tree: TBinaryTree);
+begin
+
+end;
+
+{ vypise hodnoty uzlov v strome v inorder poradi }
+procedure print_post(var tree: TBinaryTree);
+begin
+
+end;
+
+{% endhighlight %}
+
+# Bonusová domáca úloha
+Hlavne pre tých, čo nemajú dosť bodov z domácich úloh.
+
+Doimplementujte všetky operácie nad BST definovaných vyšše.
+
+**Termín odovzdania: 4. 1. 2017 (23:59)**
+
+**Spôsob odovzdania: zdrojový kód mailom**
+
+**Počet bodov: 50**
