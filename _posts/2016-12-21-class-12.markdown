@@ -6,7 +6,7 @@ categories: NPRG030
 ---
 
 Na poslednej hodine sme si zaviedli ukazatele a funkciu **new**, ktorá je schopná
-naalakovať premennú daného typu na halde. Čo sa však stane ak naalokovanú premennú
+naalakovať premennú daného typu na halde. Čo sa však stane, ak naalokovanú premennú
 už nepotrebujeme, ako napríklad u operácii **remove** spojového zoznamu?
 Túto pamäť musíme ručne uvolniť (dealokovať) funkciou **dispose**, ktorá na vstup dostane tiež ukazateľ.
 
@@ -29,6 +29,7 @@ prvky (uzly) usporiadané tak, aby v ňom bolo možné rýchlo vyhľadávať. Te
 * pre každý uzol v strome platí, že ľavý resp. pravý podstrom obsahuje len kľúče menšie resp. väčšie než je kľúč aktuálneho uzlu
 
 **Základné operácie BST**:
+
 * **insert** - vloženie nového prvku
 * **member** - zistenie či sa prvok s danou hodnotou nachádza v strome
 * **delete** - odstránenie prvku zo stromu
