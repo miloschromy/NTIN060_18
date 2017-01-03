@@ -51,4 +51,4 @@ V súbore **pom.xml** môžete zmeniť:
 * triedu obsahujúcu metódu **main**, tak aby fungoval prvý z príkazov vyššie
 
 Ak všetko funguje, tak len jednoducho nakopírujte vaše zdrojové kódy do zložky **src/main** projektu a ste hotový.
-Potom už iba otvorte tento projekt vo vašom obľúbenom IDE, všetky by mali nez problémov podporovať **Maven** projekty.
+Potom už iba otvorte tento projekt vo vašom obľúbenom IDE, všetky by mali bez problémov podporovať **Maven** projekty.
