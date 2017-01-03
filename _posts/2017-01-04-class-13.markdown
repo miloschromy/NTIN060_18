@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Cvičenie č. 13 - Zápočtový test č. 1"
+date: 2017-01-04 1:01:00 +0100
+categories: NPRG030
+---
+
+# Úloha: Zotriedenie spojáku
+
+1. Napíšte si vlastnú deklaráciu spojáku, s ktorou budete pracovať
+2. Napíšte procedúru **sort**, ktorá zotriedi spojový zoznam vzostupne (od najmenšej hodnoty po najväčiu).
+
+**Poznámky:**
+
+1. Triedenie by malo mať časovú zložitosť maximálne \\( O(n^2) \\), kde **n** je počet prvkov v spojáku.
+2. Nepíšte žiadny inicializačný kód spojáku, stačí len správna definícia a samotná procedúra **sort**.
+3. Triedenie naimplementuje len s pomocou spojového zoznamu, tzn. žiadne riešenia typu skopírujem si spoják najprv do pola nevymýšlajte.
